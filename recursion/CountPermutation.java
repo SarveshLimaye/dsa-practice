@@ -1,11 +1,11 @@
-package com.recursion;
 
 public class CountPermutation {
     public static void main(String[] args) {
-        System.out.println(Countpermutation("","abc"));
+        System.out.println(Countpermutation("", "abc"));
     }
-    static int Countpermutation(String ans,String input){
-        if(input.isEmpty()){
+
+    static int Countpermutation(String ans, String input) {
+        if (input.isEmpty()) {
             return 1;
         }
         int count = 0;

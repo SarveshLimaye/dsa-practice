@@ -1,104 +1,101 @@
-package com.LinkedList;
-
 public class DoubleyLinkedList {
     private Node head;
     private Node tail;
 
-    public void insertFirst(int value){
+    public void insertFirst(int value) {
         Node node = new Node(value);
-        node.next=head;
+        node.next = head;
         node.prev = null;
         if (head != null) {
             head.prev = node;
         }
-        head=node;
+        head = node;
 
     }
 
-    public void insertAtIndex(int value,int index){
+    public void insertAtIndex(int value, int index) {
         Node node = new Node(value);
 
-        if(head == null || index==0){
+        if (head == null || index == 0) {
             insertFirst(value);
             return;
         }
         Node temp = head;
-        for (int i =1 ; i<index;i++){
-            temp=temp.next;
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
         }
-        node.next=temp.next;
-        temp.next=node;
-        node.prev=temp;
-        if(node.next != null){
-            node.next.prev=node;
+        node.next = temp.next;
+        temp.next = node;
+        node.prev = temp;
+        if (node.next != null) {
+            node.next.prev = node;
         }
-
 
     }
 
-    public void insertLast(int value){
+    public void insertLast(int value) {
         Node node = new Node(value);
-        if(head == null){
-            node.prev=null;
-            head=node;
+        if (head == null) {
+            node.prev = null;
+            head = node;
             return;
         }
 
         Node temp = head;
-        while (temp.next != null){
-            temp=temp.next;
+        while (temp.next != null) {
+            temp = temp.next;
         }
 
         temp.next = node;
-        node.prev=temp;
-        node.next=null;
+        node.prev = temp;
+        node.next = null;
         node = temp;
 
     }
 
-    public void deleteFirst(){
+    public void deleteFirst() {
         Node temp = head.next;
-        head=temp;
-        if(head == null){
+        head = temp;
+        if (head == null) {
             tail = null;
         }
     }
 
-    public void deleteLast(){
+    public void deleteLast() {
         Node temp = head;
-        if(head==null){
+        if (head == null) {
             System.out.print("List is empty");
         }
-        while (temp.next != null){
+        while (temp.next != null) {
             temp = temp.next;
         }
         temp = temp.prev;
-        temp.next= null;
+        temp.next = null;
     }
 
-    public void deleteAtIndex(int index){
-        if(index==0){
+    public void deleteAtIndex(int index) {
+        if (index == 0) {
             deleteFirst();
             return;
         }
         Node temp = head;
-        for(int i=1; i<index;i++){
-            temp=temp.next;
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
         }
-        temp.next=temp.next.next;
+        temp.next = temp.next.next;
 
     }
 
-    public void display(){
+    public void display() {
         Node temp = head;
-        while (temp != null){
+        while (temp != null) {
             System.out.print(temp.value + " -> ");
-            temp=temp.next;
+            temp = temp.next;
         }
         System.out.print("END");
     }
 
-    private class Node{
+    private class Node {
         int value;
         Node next;
         Node prev;
@@ -121,7 +118,7 @@ public class DoubleyLinkedList {
         list.insertLast(25);
         list.insertFirst(52);
         list.insertLast(60);
-        list.insertAtIndex(20,3);
+        list.insertAtIndex(20, 3);
         list.deleteFirst();
 
         list.deleteLast();

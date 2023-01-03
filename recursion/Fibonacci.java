@@ -1,4 +1,3 @@
-package com.recursion;
 
 import java.util.Scanner;
 
@@ -12,11 +11,12 @@ public class Fibonacci {
         System.out.println(ans);
 
     }
-    static int fibo(int x){
-        if (x < 2){
+
+    static int fibo(int x) {
+        if (x < 2) {
             return x;
         }
 
-       return fibo(x-1) + fibo(x-2);
+        return fibo(x - 1) + fibo(x - 2);
     }
 }

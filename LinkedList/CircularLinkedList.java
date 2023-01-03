@@ -1,4 +1,3 @@
-package com.LinkedList;
 
 public class CircularLinkedList {
     private Node head;
@@ -39,7 +38,7 @@ public class CircularLinkedList {
             return;
         }
 
-        if (head == tail){
+        if (head == tail) {
             head = null;
             tail = null;
             return;
